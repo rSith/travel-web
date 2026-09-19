@@ -1,0 +1,436 @@
+/* ---------- Colours and sizes (change these to restyle the whole site) ---------- */
+:root {
+  --mist: #f3f8f8; /* page background */
+  --white: #ffffff;
+  --ink: #12262d; /* main text */
+  --muted: #55676d; /* softer text */
+  --sea: #0d7480; /* main accent */
+  --sea-dark: #0a565f;
+  --sea-light: #d5ebec;
+  --lacquer: #b23a2e; /* mask red, used only once or twice */
+  --line: #d7e3e4;
+
+  --font-head: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+
+  --max: 1040px;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  margin: 0;
+  background: var(--mist);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-head);
+  line-height: 1.1;
+  margin: 0;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--lacquer);
+  outline-offset: 3px;
+}
+
+.wrap {
+  width: min(100% - 2.5rem, var(--max));
+  margin-inline: auto;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(243, 248, 248, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--ink);
+  border-bottom-color: var(--sea);
+}
+
+.menu-btn {
+  display: none;
+  font: inherit;
+  font-weight: 500;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.35rem 0.9rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(4rem, 12vw, 8rem) 0 clamp(9rem, 16vw, 12rem);
+  background: linear-gradient(180deg, var(--mist) 0%, var(--sea-light) 100%);
+}
+
+.hero-place {
+  color: var(--sea-dark);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 12vw, 8rem);
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+}
+
+.hero-text {
+  max-width: 34rem;
+  font-size: 1.2rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: inline-block;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  background: var(--sea);
+  color: var(--white);
+  border: 2px solid var(--sea);
+  border-radius: 999px;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.btn:hover {
+  background: var(--sea-dark);
+  border-color: var(--sea-dark);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--sea-dark);
+}
+
+.btn-ghost:hover {
+  background: var(--sea);
+  color: var(--white);
+}
+
+.fact {
+  min-height: 3.5rem;
+  max-width: 34rem;
+  margin: 1.5rem 0 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--lacquer);
+  color: var(--ink);
+}
+
+.fact:empty {
+  border-left-color: transparent;
+}
+
+/* Waves at the bottom of the hero */
+.waves {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200%;
+  height: 130px;
+}
+
+.wave-back {
+  fill: var(--sea);
+  opacity: 0.35;
+}
+
+.wave-front {
+  fill: var(--white);
+}
+
+.wave-back,
+.wave-front {
+  animation: drift 24s linear infinite;
+}
+
+.wave-front {
+  animation-duration: 16s;
+  animation-direction: reverse;
+}
+
+@keyframes drift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-720px);
+  }
+}
+
+/* ---------- General sections ---------- */
+.section {
+  padding: clamp(3.5rem, 8vw, 6rem) 0;
+  background: var(--white);
+}
+
+.section h2 {
+  font-size: clamp(1.9rem, 4vw, 2.75rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.section-tint {
+  background: var(--mist);
+}
+
+/* About */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.about-grid p {
+  max-width: 34rem;
+}
+
+.facts {
+  margin: 0;
+  border-top: 1px solid var(--line);
+}
+
+.facts div {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.facts dt {
+  font-weight: 600;
+  color: var(--sea-dark);
+}
+
+.facts dd {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Explore list */
+.explore-list {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.explore-list li {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 1rem 3rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.explore-list h3 {
+  font-size: 1.3rem;
+}
+
+.explore-list p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Masks (dark section) */
+.section-dark {
+  background: var(--ink);
+  color: #e8f1f2;
+}
+
+.section-dark h2 {
+  color: var(--white);
+}
+
+.lead {
+  max-width: 38rem;
+  font-size: 1.15rem;
+  color: #b9cbce;
+}
+
+.mask-types {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.mask-types article {
+  padding-top: 1.25rem;
+  border-top: 3px solid var(--lacquer);
+}
+
+.mask-types h3 {
+  font-size: 1.5rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.mask-types p {
+  color: #b9cbce;
+  margin: 0;
+}
+
+/* Visit */
+.visit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.tips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tips li {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.tips li:first-child {
+  border-top: 1px solid var(--line);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--ink);
+  color: #9fb3b6;
+  border-top: 1px solid #22404a;
+  padding: 1.75rem 0;
+  font-size: 0.95rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.footer-inner p {
+  margin: 0;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 760px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--mist);
+    border-bottom: 1px solid var(--line);
+    padding: 0.5rem 1.25rem 1rem;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 0.75rem 0;
+    border-bottom: none;
+  }
+
+  .about-grid,
+  .visit-grid,
+  .explore-list li,
+  .mask-types {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* People who prefer less motion get a still page */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .wave-back,
+  .wave-front {
+    animation: none;
+  }
+}

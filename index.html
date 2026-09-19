@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ambalangoda, Sri Lanka</title>
+    <meta
+      name="description"
+      content="A small guide to Ambalangoda, a coastal town in southern Sri Lanka known for its traditional masks, quiet beach and turtle hatcheries."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Instrument+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a href="#top" class="logo">Ambalangoda</a>
+
+        <button
+          class="menu-btn"
+          id="menuBtn"
+          aria-expanded="false"
+          aria-controls="nav"
+        >
+          Menu
+        </button>
+
+        <nav id="nav" class="nav">
+          <a href="#about">About</a>
+          <a href="#explore">Explore</a>
+          <a href="#masks">Masks</a>
+          <a href="#visit">Visit</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="wrap hero-inner">
+          <p class="hero-place">Galle District, Southern Province, Sri Lanka</p>
+          <h1>Ambalangoda</h1>
+          <p class="hero-text">
+            A quiet seaside town where fishing boats go out at dawn and wooden
+            masks are still carved by hand.
+          </p>
+          <div class="hero-actions">
+            <a href="#explore" class="btn">See what to do</a>
+            <button class="btn btn-ghost" id="factBtn" type="button">
+              Tell me a fact
+            </button>
+          </div>
+          <p class="fact" id="factText" aria-live="polite"></p>
+        </div>
+
+        <svg
+          class="waves"
+          viewBox="0 0 1440 160"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path
+            class="wave wave-back"
+            d="M0,80 C120,40 240,40 360,80 C480,120 600,120 720,80 C840,40 960,40 1080,80 C1200,120 1320,120 1440,80 C1560,40 1680,40 1800,80 C1920,120 2040,120 2160,80 L2160,160 L0,160 Z"
+          />
+          <path
+            class="wave wave-front"
+            d="M0,110 C120,80 240,80 360,110 C480,140 600,140 720,110 C840,80 960,80 1080,110 C1200,140 1320,140 1440,110 C1560,80 1680,80 1800,110 C1920,140 2040,140 2160,110 L2160,160 L0,160 Z"
+          />
+        </svg>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section" id="about">
+        <div class="wrap about-grid">
+          <div>
+            <h2>A small town on the south-west coast</h2>
+            <p>
+              Ambalangoda sits on the Galle Road, with the Indian Ocean on one
+              side and coconut trees on the other. The train runs so close to
+              the sea that you can watch the waves from your seat.
+            </p>
+            <p>
+              People here are proud of two things: the beach, and the craft of
+              mask making. Think of it like a village that is famous for one
+              special food. Ask anyone in town and they will point you to a mask
+              workshop.
+            </p>
+          </div>
+
+          <dl class="facts">
+            <div>
+              <dt>Where</dt>
+              <dd>Galle District, about 90 km south of Colombo</dd>
+            </div>
+            <div>
+              <dt>Known for</dt>
+              <dd>Traditional masks, Ayurveda, sea turtles</dd>
+            </div>
+            <div>
+              <dt>Getting there</dt>
+              <dd>About 2 hours by train from Colombo</dd>
+            </div>
+            <div>
+              <dt>Best months</dt>
+              <dd>December to April, when the weather is dry</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- EXPLORE -->
+      <section class="section section-tint" id="explore">
+        <div class="wrap">
+          <h2>Things to do</h2>
+
+          <ul class="explore-list">
+            <li>
+              <h3>Ariyapala Mask Museum</h3>
+              <p>
+                See old masks on display and learn how they are carved and
+                painted. It is like walking through a picture book of village
+                stories.
+              </p>
+            </li>
+            <li>
+              <h3>Sea turtle hatchery</h3>
+              <p>
+                Visit a place that protects turtle eggs and looks after baby
+                turtles until they are ready to go to the sea.
+              </p>
+            </li>
+            <li>
+              <h3>Ambalangoda beach</h3>
+              <p>
+                Walk on a long, calm beach. Go in the early morning to see
+                fishermen bring in the catch, or stay for the sunset.
+              </p>
+            </li>
+            <li>
+              <h3>Madu River boat ride</h3>
+              <p>
+                A short drive north, take a small boat through mangroves and
+                tiny islands. It feels like a green tunnel on the water.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- MASKS -->
+      <section class="section section-dark" id="masks">
+        <div class="wrap">
+          <h2>The masks of Ambalangoda</h2>
+          <p class="lead">
+            For a long time, masks made here have been used in dance, drama and
+            healing ceremonies. Makers carve them from light wood, then paint
+            them with bright colours.
+          </p>
+
+          <div class="mask-types">
+            <article>
+              <h3>Kolam</h3>
+              <p>
+                Used in folk plays that make fun of kings, soldiers and
+                villagers. Like a comedy show, but with wooden faces.
+              </p>
+            </article>
+            <article>
+              <h3>Sanni</h3>
+              <p>
+                Worn in a healing ritual. Each mask stands for a different
+                sickness, so the dancer can "act out" the problem and send it
+                away.
+              </p>
+            </article>
+            <article>
+              <h3>Raksha</h3>
+              <p>
+                Big, fierce demon faces with wide eyes and sharp teeth. They are
+                made to look scary on purpose.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- VISIT -->
+      <section class="section" id="visit">
+        <div class="wrap visit-grid">
+          <div>
+            <h2>Plan your visit</h2>
+            <p>
+              Ambalangoda is easy to reach and easy to walk around. You do not
+              need a big plan. One day is enough to see the main places, and two
+              days lets you slow down.
+            </p>
+          </div>
+
+          <ul class="tips">
+            <li>
+              <strong>By train:</strong> take the coastal line from Colombo Fort
+              and sit on the left side for sea views.
+            </li>
+            <li>
+              <strong>By bus:</strong> buses run all day along Galle Road.
+            </li>
+            <li>
+              <strong>Around town:</strong> tuk-tuks are cheap, so agree on the
+              price before you start.
+            </li>
+            <li>
+              <strong>Nearby:</strong> Hikkaduwa, Galle Fort and Bentota are all
+              a short ride away.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <p>Ambalangoda, Sri Lanka</p>
+        <p>
+          Made by Nipuna Madhuranga - @GitHub Workshop at WUSL
+          <span id="year"></span>
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
